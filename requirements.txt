@@ -1,0 +1,10 @@
+numpy==1.16.0
+opencv-python
+tqdm
+pyyaml
+webcolors
+matplotlib
+torch
+torchvision
+webcolors
+visdom

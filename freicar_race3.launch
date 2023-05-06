@@ -1,0 +1,21 @@
+<launch>
+
+  <node pkg="freicar_map" type="freicar_map_node" name="freicar_map" launch-prefix="bash -c 'sleep 31.1; $0 $@' "/>
+
+  <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+    args="32 freicar_agent sim_agent.launch name:=freicar_1 tf_name:=freicar_1 spawn/x:=0 spawn/y:=0 spawn/z:=0 spawn/heading:=20 use_yaml_spawn:=true sync_topic:=!" 
+    name="freicar_agent" output="screen" />
+  
+   <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+    args="70 freicar_localization_rr freicar_localization.launch" 
+    name="freicar_localization_rr" output="screen" />	
+    
+ <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+    args="75 freicar_control_rr start_controller.launch" 
+    name="freicar_control_rr" output="screen" />
+    
+ <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+    args="80 freicar_drive freicar_drive.launch map_path:=/home/freicar/freicar_ws/src/freicar_base/freicar_map/maps/freicar_1.aismap"
+    name="freicar_drive" output="screen" />
+
+</launch>

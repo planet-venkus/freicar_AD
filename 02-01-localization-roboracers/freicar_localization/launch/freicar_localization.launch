@@ -1,0 +1,18 @@
+<launch>
+
+  <node pkg="freicar_sign_detect" type="freicar_sign_detect_node" name="sign_detector" output="screen"/>
+    
+  <arg name="init_x" default="4.0"/>
+  <arg name="init_y" default="0.5"/>
+  <arg name="init_z" default="0.0"/>
+  <arg name="heading" default="0"/>
+  <arg name="use_yaml_spawn" default="true"/>
+  <arg name="map_name" default="freicar_race_1"/>
+  <node pkg="freicar_localization_rr" type="freicar_localization_rr_node" name="freicar_localization_rr" output="screen"/>
+    <param name="use_yaml_spawn" value="$(arg use_yaml_spawn)"/>
+    <param name="map_name" value="$(arg map_name)"/>
+    <param name="init_x" value="$(arg init_x)"/>
+    <param name="init_y" value="$(arg init_y)"/>
+    <param name="init_z" value="$(arg init_z)"/>
+    <param name="heading" value="$(arg heading)"/>
+</launch>

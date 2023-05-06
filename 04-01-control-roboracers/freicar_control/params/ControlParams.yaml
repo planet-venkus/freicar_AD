@@ -1,0 +1,12 @@
+hyperparameter:
+  wheelbase: 0.36
+  position_tolerance: 0.8
+  steering_angle_limit: 1.22173
+  desired_velocity: 0.2
+  throttle_limit: 0.10
+  minimum_throttle_limit: 0.1
+  vmax: 0.3
+  curvature_vel_limit_factor: 0.3
+  steering_vel_limit_factor: 3.0
+  distance_vel_limit_factor: 0.3
+  lookahead_dist: 0.8

@@ -1,0 +1,5 @@
+<launch>
+  
+  <node pkg="agent_camera" type="agent_camera_node" name="agent_camera" output="screen"/>
+
+</launch>

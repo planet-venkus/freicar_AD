@@ -1,0 +1,5 @@
+<launch>
+  
+  <node pkg="freicar_drive" type="freicar_drive_node" name="freicar_drive" output="screen"/>
+
+</launch>

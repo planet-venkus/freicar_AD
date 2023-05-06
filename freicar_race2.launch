@@ -1,0 +1,23 @@
+<launch>
+
+   <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+    args="2 image_boundingboxinfo_publisher image_boundingboxinfo_publisher.launch" 
+    name="bbs_publisher" output="screen" />
+
+   <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+    args="5 freicar_localization_rr freicar_localization.launch" 
+    name="freicar_localization_rr" output="screen" />
+    
+  <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+    args="20 agent_camera agent_camera.launch" 
+    name="agent_camera" output="screen" />	
+ 
+ <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+    args="25 freicar_control_rr start_controller.launch" 
+    name="freicar_control_rr" output="screen" />
+    
+ <node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+    args="30 freicar_drive freicar_drive.launch map_path:=/home/freicar/freicar_ws/src/freicar_base/freicar_map/maps/freicar_race_1.aismap"
+    name="freicar_drive" output="screen" />
+
+</launch>
